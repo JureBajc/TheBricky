@@ -11,7 +11,7 @@ function drawIt() {
 $(document).keydown(onKeyDown);
 $(document).keyup(onKeyUp);  
 var x = 460;
-var y = 800;
+var y = 700;
 var dx = 2;
 var dy = 4;
 var WIDTH;
@@ -61,7 +61,19 @@ var start=true;
 			$("#cas").html(izpisTimer);
 		}
 	}
-
+function konecIgre(){
+		Swal.fire({
+			  customClass: 'swal-size',
+			  title: 'Konec Igre',
+			  text: "Število doseženih točk:"+tocke+", Končni čas:"+izpisTimer,
+			  confirmButtonText: 'Igraj ponovno',
+		      confirmButtonColor: 'blue', 
+			  imageWidth: 700,
+			  imageHeight: 500,
+			}).then((result) => {
+				window.location.reload();
+			})
+	}
 
 
 function initbricks() { //inicializacija opek - polnjenje v tabelo
@@ -200,6 +212,7 @@ $("#tocke").html(tocke);
 	start=true;
   }
     else if (y + dy > HEIGHT-r)
+	konecIgre();
       return;
   }
   
