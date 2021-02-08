@@ -25,7 +25,6 @@ width=100%;
 #canvas{
 border: 5px solid blue;
 position:canter;
-margin-bottom:40px;
 background: linear-gradient(90deg #fff05e 0%, #cd3132 100%);
 margin-top: 0px;
 margin-bottom:0px;
