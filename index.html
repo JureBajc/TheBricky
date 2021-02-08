@@ -6,9 +6,7 @@
 	<link rel="stylesheet" href="Style.css">
 <script src="jquery-3.5.1.min.js"></script>
 	</head>
-<body onload="risi()"onload="navodila()"onload="risi2()"onclick="play()">
- <p>Čas: <mark id="cas">00:00</mark></p>
-<button onclick="play()" type="button">Play Audio</button>
+<body onload="risi()"onload="navodila()"onload="risi2()">
 
 <button onclick="restart()" type="button">Začni Znova</button>
 
@@ -16,10 +14,21 @@
 
 <div id="glavni">
 <p id="prosojnost">Točke: <mark id="tocke">0</mark></p>
-	<canvas id="canvas" width="900" height="900"></canvas>
+<p>Čas: <mark id="cas">00:00</mark></p>
+
+	<canvas id="canvas" width="900" height="800"></canvas>
+	
 	<script src="skripta.js"></script>
+	
 </div>
 
+<div id="stats">
+<audio controls>
+  <source src="Musika.ogg" type="audio/ogg">
+  <source src="Musika.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
@@ -28,7 +37,7 @@ function risi(){
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
 	ctx.beginPath();
-	ctx.arc(460, 800, 10, 0, Math.PI*2, true);
+	ctx.arc(460, 700, 10, 0, Math.PI*2, true);
 	ctx.fillStyle='black';
 	ctx.closePath();
 	ctx.stroke();
@@ -40,23 +49,10 @@ swal('Pritisni tipko SPACE, da začneš igro',
 
 
 <script>
-var music=true;
-var audio=new Audio("Musika.mp3"); 
-			
-		function play(){
-			if(music){
-				audio.play();
-				music=false;
-			}
-			else{audio.pause();music=true;}
-			}
-			
 		function restart(){
         location.reload();
         tocke = 0;
 			}
-			
-			
 </script>
 
 </body>
