@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="Style.css">
+<script src="jquery-3.5.1.min.js"></script>
+	</head>
+<body onload="risi()"onload="navodila()"onload="risi2()"onload="play()">
+ <p>Čas: <mark id="cas">00:00</mark></p>
+<button onclick="play()" type="button">Play Audio</button>
+
+<button onclick="restart()" type="button">Začni Znova</button>
+
+
+
+<div id="glavni">
+<p id="prosojnost">Točke: <mark id="tocke">0</mark></p>
+	<canvas id="canvas" width="900" height="900"></canvas>
+	<script src="skripta.js"></script>
+</div>
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+document.getElementById('canvas').style.cursor = 'none';
+function risi(){
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+	ctx.beginPath();
+	ctx.arc(460, 800, 10, 0, Math.PI*2, true);
+	ctx.fillStyle='black';
+	ctx.closePath();
+	ctx.stroke();
+	ctx.fill();
+}
+swal('Pritisni tipko SPACE, da začneš igro',
+'Uporabljaj miško ali tipki A in D za premikanje');
+</script>
+
+
+<script>
+var music=true;
+var audio=new Audio("Musika.mp3"); 
+			
+		function play(){
+			if(music){
+				audio.play();
+				music=false;
+			}
+			else{audio.pause();music=true;}
+			}
+			
+		function restart(){
+        location.reload();
+        tocke = 0;
+			}
+			
+			
+</script>
+
+</body>
+</html>

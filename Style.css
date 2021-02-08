@@ -1,0 +1,31 @@
+*{
+	margin:0;
+	padding:0;
+	
+}
+body{
+    background-image:url('giphy.gif');
+    background-size:100%;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    height:100%;
+    width:100%;
+	font-family:sans-serif;
+	background-position:center;
+
+}
+#prosojnost {
+  opacity: 0.5;
+}
+#glavni{
+width: 100%;
+text-align:center;
+width=100%;
+}
+#canvas{
+	
+border: 5px solid blue;
+position:canter;
+margin-bottom:40px;
+background: linear-gradient(90deg #fff05e 0%, #cd3132 100%);
+}
