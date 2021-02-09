@@ -32,8 +32,9 @@ var BRICKWIDTH,BRICKHEIGHT;
 var PADDING;
 var brick = new Image();
 brick.src = "brick.jpg";
-
+var zivljenje = 3;
 var tocke;
+var test=true;
 
 //timer
 var sekunde=0;
@@ -60,19 +61,6 @@ var start=true;
 			//izpisTimer = "00:00";
 			$("#cas").html(izpisTimer);
 		}
-	}
-function konecIgre(){
-		Swal.fire({
-			  customClass: 'swal-size',
-			  title: 'Konec Igre',
-			  text: "Število doseženih točk:"+tocke+", Končni čas:"+izpisTimer,
-			  confirmButtonText: 'Igraj ponovno',
-		      confirmButtonColor: 'blue', 
-			  imageWidth: 700,
-			  imageHeight: 500,
-			}).then((result) => {
-				window.location.reload();
-			})
 	}
 
 
@@ -211,11 +199,27 @@ $("#tocke").html(tocke);
     dy = -dy;
 	start=true;
   }
-    else if (y + dy > HEIGHT-r)
-	konecIgre();
+    else if (y + dy > HEIGHT-r){
+	zivljenje=zivljenje-1;
+	
+if(test){
+	if(zivljenje==0){
+		test=false;
+		$("#zivljenje").html(zivljenje);
+		
+		swal({title: "Zgubil si", type: 
+      "Warning"}).then(function(){
+        location.reload();
+      });
+	}
+	else{
+		$("#zivljenje").html(zivljenje);
+	    dy = -dy;
+	}
+}
       return;
+	}
   }
-  
   		if(tocke==25){
       swal({title: "Zamgal si", type: 
       "sucess"}).then(function(){

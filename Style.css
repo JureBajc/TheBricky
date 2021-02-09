@@ -3,6 +3,14 @@
 	padding:0;
 	
 }
+#gorlevo{
+	margin-left:40px;
+	margin-top:10px;
+	position:center;
+}
+#vizitka{
+	margin-left:40px;
+}
 body{
     background-image:url('giphy.gif');
     background-size:100%;
@@ -18,22 +26,46 @@ body{
   opacity: 0.5;
 }
 #glavni{
-width: 100%;
-text-align:center;
-width=100%;
+	width: 100%;
+	text-align:center;
+	width=100%;
 }
 #canvas{
-border: 5px solid blue;
-position:canter;
-background: linear-gradient(90deg #fff05e 0%, #cd3132 100%);
-margin-top: 0px;
-margin-bottom:0px;
+	border: 5px solid blue;
+	position:canter;
+	display: inline-block;
+	margin-top: 0px;
+	margin-bottom:0px;
+	float:center;
 }
-#stats{
+#gordesno{
 	position:absolute;
 	top:0px;
 	right:0px;
-	padding: 10px;
+	margin-top:10px;
 	width:300px;
 	height:70px;
+}
+audio{
+	opacity:0.7;
+}
+
+
+.centriraj{
+	margin-left:300px;
+	
+}
+.pod{
+	width:50px;
+	height:35px;
+	padding:15px;
+	text-align:center;
+	display: inline-block;
+	border: 5px solid blue;
+	margin-left:40px
+}
+#linja{
+	width: 100%;
+	height: 30px;
+	position:left;
 }

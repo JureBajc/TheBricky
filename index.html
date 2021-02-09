@@ -4,25 +4,41 @@
 	<title>index</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="Style.css">
-<script src="jquery-3.5.1.min.js"></script>
+	<script src="jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 	</head>
-<body onload="risi()"onload="navodila()"onload="risi2()">
 
-<button onclick="restart()" type="button">Začni Znova</button>
+<body onload="risi()"onload="vizitka()">
 
-
-
-<div id="glavni">
-<p id="prosojnost">Točke: <mark id="tocke">0</mark></p>
-<p>Čas: <mark id="cas">00:00</mark></p>
-
-	<canvas id="canvas" width="900" height="800"></canvas>
-	
-	<script src="skripta.js"></script>
-	
+<div id="gorlevo">
+<button onclick="restart()"><img src="zacni.png"></button>
 </div>
 
-<div id="stats">
+<div id="vizitka">
+<button onclick="vizitka()" class="vizitka"><img src="vizitka.png"></button>
+</div>
+
+
+<div id="linja">
+	<div class="pod">
+			<p id="prosojnost">Točke: <mark id="tocke">0</mark></p>
+	</div>
+	<div class="pod">
+			<p id="prosojnost">Čas: <mark id="cas">00:00</mark></p>
+	</div>
+	<div class="pod">
+		<p id="prosojnost">Življenje: <mark id="zivljenje">3</mark></p>
+	</div>
+</div>
+
+<div id="glavni">
+<canvas id="canvas" width="900" height="800"></canvas>
+<script src="skripta.js"></script>
+</div>
+
+
+<div id="gordesno">
+<p>Predvajalnik</p>
 <audio controls>
   <source src="Musika.ogg" type="audio/ogg">
   <source src="Musika.mp3" type="audio/mpeg">
@@ -43,10 +59,32 @@ function risi(){
 	ctx.stroke();
 	ctx.fill();
 }
-swal('Pritisni tipko SPACE, da začneš igro',
-'Uporabljaj miško ali tipki A in D za premikanje');
+Swal.fire({
+		  customClass: 'swal-size',
+		  confirmButtonText: 'Naprej',
+		  title: 'Navodila',
+		  text: 'Pritisni tipko SPACE, da začneš igro. Uporabljaj miško ali tipki A in D za premikanje.',
+		  imageWidth: 400,
+		  imageHeight: 400,		
+		  confirmButtonColor: 'red',
+		})
+
 </script>
 
+<script>
+function vizitka(){
+		Swal.fire({
+		  customClass: 'swal-size',
+		  confirmButtonText: 'Ok',
+		  title: 'Vizitka',
+		  text: 'Naredil Jure Bajc 4RB, 9.02.2021',
+		  imageWidth: 400,
+		  imageHeight: 400,	
+		  confirmButtonColor: 'red',  
+		})
+	}
+
+</script>
 
 <script>
 		function restart(){
